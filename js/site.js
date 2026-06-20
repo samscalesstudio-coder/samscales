@@ -307,7 +307,8 @@ function initThreeAccent(canvas) {
    ------------------------------------------------------------------------- */
 const BK_SERVICES = [
   "Signature Cut", "Skin Fade", "Beard Sculpt & Line-up",
-  "Hot-Towel Shave", "Cut + Beard Combo", "Kids' Cut (5+)", "Not sure yet",
+  "Hot-Towel Shave", "Cut + Beard Combo", "Kids' Cut (5+)",
+  "Manicure", "Pedicure", "Facial", "Hair Colour & Chemical", "Not sure yet",
 ];
 const BK_TIMES = ["Flexible", "Morning (10–12)", "Afternoon (12–4)",
   "Evening (4–7)", "Night (7–9)", "10:00", "11:00", "12:00", "13:00", "14:00",
