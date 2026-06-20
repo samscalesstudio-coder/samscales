@@ -29,16 +29,17 @@ const SHOP = {
 
   ownerName: "Sam",   // ✅ confirmed by owner
 
-  // ✅ Open 10 AM – 9 PM (owner). Closed Tuesdays per brand guidelines.
+  // ✅ Open 8 AM – 10 PM daily (owner). Closed only on the last Tuesday of the month.
   hours: [
-    { day: "Monday",    hours: "10:00 AM – 9:00 PM" },
-    { day: "Tuesday",   hours: "Closed", closed: true },
-    { day: "Wednesday", hours: "10:00 AM – 9:00 PM" },
-    { day: "Thursday",  hours: "10:00 AM – 9:00 PM" },
-    { day: "Friday",    hours: "10:00 AM – 9:00 PM" },
-    { day: "Saturday",  hours: "10:00 AM – 9:00 PM" },
-    { day: "Sunday",    hours: "10:00 AM – 9:00 PM" },
+    { day: "Monday",    hours: "8:00 AM – 10:00 PM" },
+    { day: "Tuesday",   hours: "8:00 AM – 10:00 PM" },
+    { day: "Wednesday", hours: "8:00 AM – 10:00 PM" },
+    { day: "Thursday",  hours: "8:00 AM – 10:00 PM" },
+    { day: "Friday",    hours: "8:00 AM – 10:00 PM" },
+    { day: "Saturday",  hours: "8:00 AM – 10:00 PM" },
+    { day: "Sunday",    hours: "8:00 AM – 10:00 PM" },
   ],
+  closedRule: "Closed on the last Tuesday of the month",
 };
 
 const waLink = (msg) =>
@@ -80,18 +81,27 @@ function hydrateShop() {
   });
 
   // Opening hours table
-  const hoursHost = document.querySelector("[data-shop='hours']");
-  if (hoursHost) {
-    const todayIdx = (new Date().getDay() + 6) % 7; // 0=Mon
-    hoursHost.innerHTML = SHOP.hours
+  document.querySelectorAll("[data-shop='hours']").forEach((hoursHost) => {
+    const now = new Date();
+    const todayIdx = (now.getDay() + 6) % 7; // 0=Mon
+    // is today the last Tuesday of the month? (Tue + no more Tuesdays this month)
+    const isLastTue =
+      now.getDay() === 2 &&
+      new Date(now.getFullYear(), now.getMonth(), now.getDate() + 7).getMonth() !== now.getMonth();
+
+    const rows = SHOP.hours
       .map((h, i) => {
-        const cls = ["hours-row", h.closed ? "closed" : "", i === todayIdx ? "today" : ""]
-          .filter(Boolean)
-          .join(" ");
-        return `<div class="${cls}"><span class="day">${h.day}${i === todayIdx ? " · Today" : ""}</span><span class="hrs">${h.hours}</span></div>`;
+        const isToday = i === todayIdx;
+        const closedToday = isToday && h.day === "Tuesday" && isLastTue;
+        const closed = h.closed || closedToday;
+        const cls = ["hours-row", closed ? "closed" : "", isToday ? "today" : ""].filter(Boolean).join(" ");
+        const hrs = closedToday ? "Closed today" : h.hours;
+        return `<div class="${cls}"><span class="day">${h.day}${isToday ? " · Today" : ""}</span><span class="hrs">${hrs}</span></div>`;
       })
       .join("");
-  }
+    const note = SHOP.closedRule ? `<div class="hours-note">${SHOP.closedRule}</div>` : "";
+    hoursHost.innerHTML = rows + note;
+  });
 }
 
 /* -------------------------------------------------------------------------

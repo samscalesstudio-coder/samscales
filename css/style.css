@@ -466,6 +466,7 @@ body.menu-open .nav-toggle span:nth-child(3) { transform: translate(-50%, 0) rot
 .hours-row.closed .hrs { color: var(--gold); font-family: var(--font-italic); font-style: italic; }
 .hours-row.today { color: var(--gold-warm); }
 .hours-row.today .day, .hours-row.today .hrs { color: var(--gold-warm); }
+.hours-note { margin-top: 0.7rem; font-family: var(--font-italic); font-style: italic; font-size: 0.9rem; color: var(--gold-warm); }
 
 .policy-list { display: grid; gap: var(--s-2); margin-top: var(--s-4); }
 .policy { padding-left: var(--s-3); border-left: 2px solid var(--gold); }
