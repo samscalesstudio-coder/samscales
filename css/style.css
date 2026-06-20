@@ -713,7 +713,12 @@ body.bk-open { overflow: hidden; }
   .footer-grid { grid-template-columns: 1fr; gap: var(--s-4); }
   .gallery { grid-template-columns: 1fr 1fr; }
   .bk-row.two { grid-template-columns: 1fr; }
-  .bk-dialog { padding: var(--s-4) var(--s-3) var(--s-3); }
+  /* On phones, scroll the whole overlay (most reliable touch pattern) rather
+     than an inner box — fixes "can't scroll the booking form" on mobile. */
+  .bk-modal { place-items: start center; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  /* dialog must NOT be its own scroll container on mobile, or overscroll-behavior
+     traps the gesture and the overlay can't scroll */
+  .bk-dialog { max-height: none; overflow: visible; overscroll-behavior: auto; margin: var(--s-3) 0; padding: var(--s-4) var(--s-3) var(--s-3); }
   .section { padding: var(--s-6) 0; }
   .about-figure .media-badge { width: 92px; height: 92px; right: 6px; bottom: -14px; }
 }

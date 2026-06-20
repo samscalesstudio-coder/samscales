@@ -128,6 +128,9 @@ function initNav() {
 function initLenis() {
   if (typeof Lenis === "undefined") return null;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return null;
+  // Skip Lenis on touch / small screens — phones scroll smoothly natively and
+  // Lenis can interfere with touch scrolling (incl. inside the booking modal).
+  if (window.matchMedia("(hover: none), (pointer: coarse), (max-width: 900px)").matches) return null;
 
   const lenis = new Lenis({
     duration: 1.15,
