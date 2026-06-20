@@ -1,0 +1,198 @@
+/* =========================================================================
+   SAMSCALES — Home page: cinematic scroll-frame experience
+   ========================================================================= */
+
+/* ---------- Loader ---------- */
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--onyx);
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--s-3);
+  transition: opacity 0.8s var(--ease), visibility 0.8s var(--ease);
+}
+#loader.hidden { opacity: 0; visibility: hidden; }
+.loader-brand {
+  width: 120px; height: 120px; border-radius: 50%;
+  box-shadow: 0 0 60px rgba(184,148,86,0.25);
+  animation: pulse 2.4s var(--ease) infinite;
+}
+@keyframes pulse { 0%,100% { transform: scale(1); opacity: 0.92; } 50% { transform: scale(1.04); opacity: 1; } }
+.loader-track { width: 220px; height: 2px; background: var(--hairline); border-radius: 2px; overflow: hidden; }
+#loader-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--gold), var(--gold-warm)); transition: width 0.25s linear; }
+.loader-meta { display: flex; justify-content: space-between; width: 220px; font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-faint); }
+#loader-percent { color: var(--gold-warm); }
+
+/* ---------- Standalone hero ---------- */
+.hero-standalone {
+  position: relative;
+  height: 100vh;
+  min-height: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 20;
+  background: var(--onyx);
+}
+.hero-inner { width: min(var(--maxw), 92vw); margin-inline: auto; position: relative; z-index: 3; }
+.hero-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3.4rem, 13vw, 12rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin: var(--s-2) 0 var(--s-3);
+}
+.hero-heading .word { display: inline-block; overflow: hidden; vertical-align: top; }
+.hero-heading .word > span {
+  display: inline-block;
+  will-change: transform;
+  /* gradient on the spans themselves — GSAP transforms them, and
+     background-clip:text does NOT paint onto transformed descendants */
+  background: linear-gradient(180deg, #fdf8ec 0%, var(--silver) 38%, #b9b3a8 68%, #7a7468 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.hero-tagline {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.6vw, 1.9rem);
+  color: var(--gold-warm);
+  max-width: 36ch;
+}
+.hero-cta-row { display: flex; gap: var(--s-2); margin-top: var(--s-4); flex-wrap: wrap; }
+
+.hero-three { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.9; }
+
+.scroll-indicator {
+  position: absolute;
+  left: 50%; bottom: 30px;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+  color: var(--text-faint);
+  font-size: 0.64rem; letter-spacing: 0.3em; text-transform: uppercase;
+  z-index: 3;
+}
+.scroll-indicator .arrow { width: 1px; height: 38px; background: linear-gradient(var(--gold), transparent); animation: drop 1.8s var(--ease) infinite; }
+@keyframes drop { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+/* ---------- Fixed canvas (video frames) ---------- */
+.canvas-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  clip-path: circle(0% at 50% 50%);
+  will-change: clip-path;
+}
+#canvas { width: 100%; height: 100%; display: block; }
+.canvas-vignette {
+  position: fixed; inset: 0; z-index: 3; pointer-events: none;
+  background: radial-gradient(120% 100% at 50% 50%, transparent 55%, rgba(10,10,10,0.55) 100%);
+}
+
+/* ---------- Dark overlay (stats) ---------- */
+#dark-overlay {
+  position: fixed; inset: 0; z-index: 4;
+  background: var(--onyx);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- Marquee ---------- */
+.marquee-wrap {
+  position: fixed;
+  top: 50%; left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+}
+.marquee-text {
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13vw;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(232,230,225,0.35);
+  text-stroke: 1px rgba(232,230,225,0.35);
+}
+.marquee-text .fill { color: var(--gold-warm); -webkit-text-stroke: 0; }
+
+/* ---------- Scroll container & sections ---------- */
+#scroll-container { position: relative; z-index: 6; }
+.scroll-section {
+  position: absolute;
+  left: 0; width: 100%;
+  top: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.scroll-section .section-inner { pointer-events: auto; position: relative; z-index: 1; }
+.stats-inner, .svc-preview, .cta-inner { position: relative; z-index: 1; }
+.section-content { display: flex; }
+.align-left { padding-left: 6vw; padding-right: 52vw; justify-content: flex-start; }
+.align-right { padding-left: 52vw; padding-right: 6vw; justify-content: flex-start; }
+.align-left .section-inner, .align-right .section-inner { max-width: 42vw; }
+
+/* Legibility scrims (not cards) — keep text readable over bright video frames */
+.scroll-section::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.align-left::before  { background: linear-gradient(90deg,  rgba(7,6,5,0.92) 0%, rgba(7,6,5,0.55) 32%, transparent 60%); }
+.align-right::before { background: linear-gradient(270deg, rgba(7,6,5,0.92) 0%, rgba(7,6,5,0.55) 32%, transparent 60%); }
+.section-services::before, .section-cta::before {
+  inset: -40% -10%;
+  background: radial-gradient(58% 56% at 50% 50%, rgba(7,6,5,0.9) 0%, rgba(7,6,5,0.62) 48%, transparent 76%);
+}
+
+.section-label { display: block; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: var(--s-2); }
+.section-heading { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 5vw, 4.4rem); line-height: 1.02; letter-spacing: -0.02em; margin-bottom: var(--s-2); }
+.section-body { color: var(--text); font-size: 1.1rem; max-width: 40ch; }
+.section-note { margin-top: var(--s-2); font-family: var(--font-italic); font-style: italic; color: var(--gold-warm); font-size: 1.15rem; }
+
+/* stats */
+.section-stats { display: grid; place-items: center; text-align: center; padding: 0 6vw; }
+.stats-inner { width: min(1000px, 92vw); }
+.stats-head { margin-bottom: var(--s-5); }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-4); }
+.stat { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+.stat-number { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1; color: var(--silver); }
+.stat-suffix { color: var(--gold-warm); font-family: var(--font-display); font-size: 1.4rem; margin-top: -0.4rem; }
+.stat-label { font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+
+/* services preview cards inside scroll experience */
+.section-services { display: grid; place-items: center; padding: 0 6vw; }
+.svc-preview { width: min(1120px, 92vw); }
+.svc-preview-head { text-align: center; margin-bottom: var(--s-4); }
+
+/* CTA persists */
+.section-cta { display: grid; place-items: center; text-align: center; padding: 0 6vw; }
+.cta-inner { width: min(780px, 92vw); }
+.cta-inner h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.4rem, 5.2vw, 4.4rem); line-height: 1.0; letter-spacing: -0.03em; margin-bottom: var(--s-3); }
+.section-cta .hero-cta-row { margin-top: var(--s-3); }
+
+/* end spacer reveals real footer */
+.home-tail { position: relative; z-index: 7; background: var(--onyx); }
+
+/* ---------- Mobile: collapse the side-aligned cinematic layout ---------- */
+@media (max-width: 768px) {
+  .align-left, .align-right { padding: var(--s-4) 7vw; justify-content: center; text-align: left; }
+  .align-left .section-inner, .align-right .section-inner {
+    max-width: 100%;
+    background: rgba(10,10,10,0.62);
+    backdrop-filter: blur(3px);
+    padding: var(--s-3);
+    border-radius: var(--radius);
+    border: 1px solid var(--hairline);
+  }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+  .marquee-text { font-size: 22vw; }
+  .hero-heading { font-size: clamp(3rem, 18vw, 6rem); }
+}

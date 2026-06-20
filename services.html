@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0A0A0A" />
+<title>Services — Samscales Barber Shop</title>
+<meta name="description" content="Cuts, skin fades, beard sculpts, line-ups and hot-towel shaves at Samscales Barber Shop. Call them what they are — done right, every chair, every time." />
+<link rel="icon" href="assets/logo.jpeg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html" aria-label="Samscales home">
+      <img src="assets/logo.jpeg" alt="Samscales logo" />
+      <span class="brand-name">SAMSCALES<small>BARBER SHOP</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="nav-only-mobile"><a class="btn btn-ghost" data-shop="directions-link" href="#">Get Directions</a></li>
+      <li class="nav-only-mobile"><a class="btn" href="booking.html">Book a Chair</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-dir" data-shop="directions-link" href="#" aria-label="Get directions">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+        <span class="btn-label">Directions</span>
+      </a>
+      <a class="btn" href="booking.html">Book a Chair</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-glow"></div>
+  <canvas class="three-accent"></canvas>
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>The Menu</span>
+    <h1 class="display" data-reveal data-delay="0.05">Cuts, fades, beards<br>&amp; the hot towel.</h1>
+    <p data-reveal data-delay="0.12">We call them what they are — cuts, fades, beards, shaves, line-ups and hot towels. No "looks", no "vibes". Just precise work, finished by eye, every chair, every time.</p>
+  </div>
+</section>
+
+<!-- SERVICE CARDS -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="svc-list cards-3d">
+
+      <article class="card3d" data-reveal>
+        <span class="c3d-num">01</span>
+        <div class="c3d-icon"><span class="icon3d">
+          <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><line x1="8" y1="7.6" x2="20" y2="16"/><line x1="8" y1="16.4" x2="20" y2="8"/><line x1="8" y1="7.6" x2="14" y2="12"/></svg>
+        </span></div>
+        <h3 class="c3d-title">Signature Cut</h3>
+        <p class="c3d-body">A full scissor or clipper cut, shaped to your head and how you wear it. Two-minute consultation, mirror checks, clean finish.</p>
+        <button class="c3d-book" data-book-service="Signature Cut">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </article>
+
+      <article class="card3d" data-reveal data-delay="0.06">
+        <span class="c3d-num">02</span>
+        <div class="c3d-icon"><span class="icon3d">
+          <svg viewBox="0 0 24 24"><path d="M3 18h18"/><path d="M5 18c1-5 2-9 3.5-12"/><path d="M9 18c.6-3 1.2-5.5 2-8"/><path d="M13 18c.5-2 1-3.5 1.6-5"/><path d="M17 18c.3-1 .6-2 1-3"/></svg>
+        </span></div>
+        <h3 class="c3d-title">Skin Fade</h3>
+        <p class="c3d-body">A fade that disappears into the skin — high, mid or low. Blended by hand until there isn't a line to find.</p>
+        <button class="c3d-book" data-book-service="Skin Fade">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </article>
+
+      <article class="card3d" data-reveal data-delay="0.12">
+        <span class="c3d-num">03</span>
+        <div class="c3d-icon"><span class="icon3d">
+          <svg viewBox="0 0 24 24"><path d="M4 16c4-1 7-3 10-7l4-4"/><path d="M18 5l1.5 1.5"/><path d="M4 16l-1 4 4-1"/><path d="M14 9c1.5 1.5 1.5 1.5 3 3"/></svg>
+        </span></div>
+        <h3 class="c3d-title">Beard Sculpt &amp; Line-up</h3>
+        <p class="c3d-body">Beard shaped, cheek and neck lines set sharp. Trimmed to your face, not a template.</p>
+        <button class="c3d-book" data-book-service="Beard Sculpt &amp; Line-up">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </article>
+
+      <article class="card3d" data-reveal>
+        <span class="c3d-num">04</span>
+        <div class="c3d-icon"><span class="icon3d">
+          <svg viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="7" rx="2"/><path d="M6 9V7a2 2 0 0 1 2-2h2"/><path d="M4 19h16"/><path d="M8 12h.01M11 12h.01M14 12h.01"/></svg>
+        </span></div>
+        <h3 class="c3d-title">Hot-Towel Shave</h3>
+        <p class="c3d-body">Traditional wet shave with a single-use blade and a hot towel. Close, calm, and finished with balm.</p>
+        <button class="c3d-book" data-book-service="Hot-Towel Shave">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </article>
+
+      <article class="card3d" data-reveal data-delay="0.06">
+        <span class="c3d-num">05</span>
+        <div class="c3d-icon"><span class="icon3d">
+          <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><line x1="8" y1="7.6" x2="20" y2="16"/><line x1="8" y1="16.4" x2="20" y2="8"/><path d="M19 18l1.5 1.5"/></svg>
+        </span></div>
+        <h3 class="c3d-title">Cut + Beard Combo</h3>
+        <p class="c3d-body">The full reset — signature cut paired with a beard sculpt and line-up. Everything sharp at once.</p>
+        <button class="c3d-book" data-book-service="Cut + Beard Combo">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </article>
+
+      <article class="card3d" data-reveal data-delay="0.12">
+        <span class="c3d-num">06</span>
+        <div class="c3d-icon"><span class="icon3d">
+          <svg viewBox="0 0 24 24"><path d="M7 10a5 5 0 0 1 10 0"/><path d="M5 10h14"/><path d="M6 10v6a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-6"/><path d="M12 4v2"/></svg>
+        </span></div>
+        <h3 class="c3d-title">Kids' Cut <span style="font-size:.7em;color:var(--gold)">(5+)</span></h3>
+        <p class="c3d-body">A calm cut for younger clients, age five and up, with a parent on the premises. Patient hands, quick chair.</p>
+        <button class="c3d-book" data-book-service="Kids' Cut (5+)">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </article>
+
+    </div>
+
+    <p class="script" data-reveal style="font-size:1.3rem;margin-top:var(--s-4);text-align:center">
+      Pricing is shown on the menu board at the till — the price you see is the price you pay.
+    </p>
+  </div>
+</section>
+
+<!-- THE SERVICE STANDARD -->
+<section class="section">
+  <div class="wrap">
+    <div class="svc-intro">
+      <div>
+        <span class="eyebrow" data-reveal>The Samscales Standard</span>
+        <h2 class="display" data-reveal data-delay="0.05" style="font-size:clamp(2rem,4.5vw,3.4rem);margin-top:var(--s-2)">Five movements.<br>One signature.</h2>
+      </div>
+      <p data-reveal data-delay="0.1" style="color:var(--text-muted)">Whether you sit with a senior barber or the newest hire, the service runs the same five movements — so the Samscales experience is consistent, every chair, every time.</p>
+    </div>
+
+    <div class="cards-3d" style="margin-top:var(--s-5)">
+      <article class="card3d" data-reveal><span class="c3d-num">I</span><h3 class="c3d-title" style="transform:none">The Greeting</h3><p class="c3d-body" style="transform:none">Stand to greet. Eye contact, name where we know it, water or coffee within thirty seconds.</p></article>
+      <article class="card3d" data-reveal data-delay="0.05"><span class="c3d-num">II</span><h3 class="c3d-title" style="transform:none">The Consultation</h3><p class="c3d-body" style="transform:none">Two minutes minimum. Length, line and finish agreed before the first guard goes on.</p></article>
+      <article class="card3d" data-reveal data-delay="0.1"><span class="c3d-num">III</span><h3 class="c3d-title" style="transform:none">The Cut</h3><p class="c3d-body" style="transform:none">Clean tools, phone away, mirror checks at three intervals. We don't rush the line.</p></article>
+      <article class="card3d" data-reveal data-delay="0.05"><span class="c3d-num">IV</span><h3 class="c3d-title" style="transform:none">The Finish</h3><p class="c3d-body" style="transform:none">Hot towel where it's included, neck brushed clean, product only with consent.</p></article>
+      <article class="card3d" data-reveal data-delay="0.1"><span class="c3d-num">V</span><h3 class="c3d-title" style="transform:none">The Farewell</h3><p class="c3d-body" style="transform:none">Walk to the till, confirm the next appointment, thanked by name.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="cta-band" data-reveal>
+      <span class="eyebrow center">Ready when you are</span>
+      <h2 class="display">Pick a service. Take the chair.</h2>
+      <p>Walk-ins are welcome — booked clients are seen first. Reserve your slot in seconds.</p>
+      <div class="cta-row">
+        <a class="btn btn-lg" href="booking.html">Book a Chair</a>
+        <a class="btn btn-ghost btn-lg" data-shop="whatsapp-link" data-wa-msg="Hi Samscales, I'd like to book a service." href="#">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo.jpeg" alt="Samscales logo" />
+      <p>Precision cuts, clean fades and a calm room. Established 2026.</p>
+      <p class="footer-tag">Sharp Cuts. Clean Fades.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="booking.html">Booking</a></li><li><a href="about.html">About</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Visit</h4><ul>
+      <li><a data-shop="maps-link" href="#" target="_blank" rel="noopener"><span data-shop="address">—</span></a></li>
+      <li><a data-shop="phone-link" href="#">—</a></li>
+      <li><a data-shop="email-link" href="#">—</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Hours</h4><div data-shop="hours" class="footer-hours"></div></div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <span data-shop="year">2026</span> Samscales Barber Shop. All rights reserved.</span>
+    <div class="footer-social">
+      <a data-shop="instagram-link" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a data-shop="whatsapp-link" data-wa-msg="Hi Samscales!" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l1.6-4.5A8 8 0 1 1 8 19.4L3 21z"/><path d="M9 8c0 4 3 7 7 7M9 8c0-1 1-1 1.5-.5l1 1.5-1 1M16 15c1 0 1-1 .5-1.5l-1.5-1-1 1"/></svg></a>
+      <a data-shop="phone-link" href="#" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h3l1.5 4.5L7.5 10a11 11 0 0 0 6 6l1.5-2 4.5 1.5V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

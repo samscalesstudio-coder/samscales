@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+package-lock.json
+
+# local dev scratch
+temporary screenshots/
+
+# internal source material — not for the public site
+*.pdf
+Hair_salon_at_night_*.mp4
+CLAUDE*.md
+SKILL*.md
+
+# raw image originals (clean copies live in assets/)
+384e1cc1-*.jpeg
+f9ca7235-*.jpeg
+e1b02527-*.jpeg

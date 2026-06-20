@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0A0A0A" />
+<title>Samscales Barber Shop — Sharp Cuts. Clean Fades.</title>
+<meta name="description" content="Samscales Barber Shop — precision cuts, skin fades, beard sculpts and hot-towel shaves. Est. 2026. Where every chair is a standard and every cut is a signature." />
+<link rel="icon" href="assets/logo.jpeg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+<!-- 1. LOADER -->
+<div id="loader">
+  <img class="loader-brand" src="assets/logo.jpeg" alt="Samscales" />
+  <div class="loader-track"><div id="loader-bar"></div></div>
+  <div class="loader-meta"><span>Sharp Cuts. Clean Fades.</span><span id="loader-percent">0%</span></div>
+</div>
+
+<!-- 2. HEADER -->
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html" aria-label="Samscales home">
+      <img src="assets/logo.jpeg" alt="Samscales logo" />
+      <span class="brand-name">SAMSCALES<small>BARBER SHOP</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="nav-only-mobile"><a class="btn btn-ghost" data-shop="directions-link" href="#">Get Directions</a></li>
+      <li class="nav-only-mobile"><a class="btn" href="booking.html">Book a Chair</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-dir" data-shop="directions-link" href="#" aria-label="Get directions">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+        <span class="btn-label">Directions</span>
+      </a>
+      <a class="btn" href="booking.html">Book a Chair</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<!-- 3. HERO (standalone 100vh) -->
+<section class="hero-standalone">
+  <canvas class="three-accent hero-three"></canvas>
+  <div class="hero-inner">
+    <span class="eyebrow">Est. 2026 — Barber Shop</span>
+    <h1 class="hero-heading metal-text">
+      <span class="word"><span>Sharp</span></span> <span class="word"><span>Cuts.</span></span><br />
+      <span class="word"><span>Clean</span></span> <span class="word"><span>Fades.</span></span>
+    </h1>
+    <p class="hero-tagline">Where every chair is a standard, and every cut is a signature.</p>
+    <div class="hero-cta-row">
+      <a class="btn btn-lg" href="booking.html">Book a Chair</a>
+      <a class="btn btn-ghost btn-lg" href="services.html">View Services</a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span>Scroll</span><span class="arrow"></span></div>
+</section>
+
+<!-- 4. CANVAS (video frames) -->
+<div class="canvas-wrap"><canvas id="canvas"></canvas></div>
+<div class="canvas-vignette"></div>
+
+<!-- 5. DARK OVERLAY -->
+<div id="dark-overlay"></div>
+
+<!-- 6. MARQUEE -->
+<div class="marquee-wrap" data-scroll-speed="-30" data-show="36" data-hide="58">
+  <div class="marquee-text">SHARP CUTS&nbsp;<span class="fill">&middot;</span>&nbsp;CLEAN FADES&nbsp;<span class="fill">&middot;</span>&nbsp;SHARP CUTS&nbsp;<span class="fill">&middot;</span>&nbsp;CLEAN FADES&nbsp;<span class="fill">&middot;</span>&nbsp;</div>
+</div>
+
+<!-- 7. SCROLL CONTAINER -->
+<main id="scroll-container">
+
+  <!-- The Promise -->
+  <section class="scroll-section section-content align-left" data-enter="6" data-leave="20" data-animation="slide-left">
+    <div class="section-inner">
+      <span class="section-label">001 — The Promise</span>
+      <h2 class="section-heading">Every visit.<br>Every chair.<br>Every time.</h2>
+      <p class="section-body">A cut at Samscales is a contract. We agree the length, the line and the finish before the cape comes off — and we don't move on until the mirror says yes.</p>
+      <p class="section-note">"Sharp Cuts. Clean Fades."</p>
+    </div>
+  </section>
+
+  <!-- Precision -->
+  <section class="scroll-section section-content align-right" data-enter="24" data-leave="38" data-animation="slide-right">
+    <div class="section-inner">
+      <span class="section-label">002 — Precision</span>
+      <h2 class="section-heading">Lines you can see from across the room.</h2>
+      <p class="section-body">Skin fades that disappear. A finish that reads as intentional, never approximate. We don't rush the line — it is the signature of the cut.</p>
+    </div>
+  </section>
+
+  <!-- Cleanliness -->
+  <section class="scroll-section section-content align-left" data-enter="42" data-leave="54" data-animation="clip-reveal">
+    <div class="section-inner">
+      <span class="section-label">003 — Cleanliness</span>
+      <h2 class="section-heading">Sanitised in front of you.</h2>
+      <p class="section-body">A fresh blade every client. A station wiped between every chair. A Barbicide jar you can see. Clean isn't behind the scenes here — it's part of the service.</p>
+    </div>
+  </section>
+
+  <!-- Stats (dark overlay, centered) -->
+  <section class="scroll-section section-stats" data-enter="58" data-leave="72" data-animation="stagger-up">
+    <div class="stats-inner">
+      <div class="stats-head">
+        <span class="section-label" style="display:inline-block">The Standard</span>
+        <h2 class="section-heading">Held to the number.</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat"><span class="stat-number" data-value="5" data-decimals="0">0</span><span class="stat-label">Service movements</span></div>
+        <div class="stat"><span class="stat-number" data-value="100" data-decimals="0">0</span><span class="stat-suffix">%</span><span class="stat-label">Single-use blades</span></div>
+        <div class="stat"><span class="stat-number" data-value="90" data-decimals="0">0</span><span class="stat-suffix">s</span><span class="stat-label">Reset between clients</span></div>
+        <div class="stat"><span class="stat-number" data-value="4" data-decimals="0">0</span><span class="stat-label">Brand pillars</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services preview (centered) -->
+  <section class="scroll-section section-services" data-enter="76" data-leave="88" data-animation="scale-up">
+    <div class="svc-preview">
+      <div class="svc-preview-head">
+        <span class="section-label" style="display:inline-block">The Menu</span>
+        <h2 class="section-heading">What we do, done right.</h2>
+      </div>
+      <div class="cards-3d">
+        <article class="card3d svc-card">
+          <span class="c3d-num">01</span>
+          <div class="c3d-icon"><span class="icon3d">
+            <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><line x1="8" y1="7.6" x2="20" y2="16"/><line x1="8" y1="16.4" x2="20" y2="8"/><line x1="8" y1="7.6" x2="14" y2="12"/></svg>
+          </span></div>
+          <h3 class="c3d-title">Cuts &amp; Fades</h3>
+          <p class="c3d-body">Scissor cuts, skin fades and tapers shaped to your head and your week.</p>
+          <button class="c3d-book" data-book-service="Signature Cut">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </article>
+        <article class="card3d svc-card">
+          <span class="c3d-num">02</span>
+          <div class="c3d-icon"><span class="icon3d">
+            <svg viewBox="0 0 24 24"><path d="M4 16c4-1 7-3 10-7l4-4"/><path d="M18 5l1.5 1.5"/><path d="M4 16l-1 4 4-1"/><path d="M14 9c1.5 1.5 1.5 1.5 3 3"/></svg>
+          </span></div>
+          <h3 class="c3d-title">Beards &amp; Line-ups</h3>
+          <p class="c3d-body">Beard sculpts, sharp line-ups and detail work, finished by eye.</p>
+          <button class="c3d-book" data-book-service="Beard Sculpt &amp; Line-up">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </article>
+        <article class="card3d svc-card">
+          <span class="c3d-num">03</span>
+          <div class="c3d-icon"><span class="icon3d">
+            <svg viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="7" rx="2"/><path d="M6 9V7a2 2 0 0 1 2-2h2"/><path d="M4 19h16"/><path d="M8 12h.01M11 12h.01M14 12h.01"/></svg>
+          </span></div>
+          <h3 class="c3d-title">Hot-Towel Shaves</h3>
+          <p class="c3d-body">A traditional wet shave, hot towel and a finish that lasts.</p>
+          <button class="c3d-book" data-book-service="Hot-Towel Shave">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA (persists) -->
+  <section class="scroll-section section-cta" data-enter="92" data-leave="100" data-animation="fade-up" data-persist="true">
+    <div class="cta-inner">
+      <span class="section-label" style="display:inline-block">Take the chair</span>
+      <h2>Walk in taller<br>than you walked out.</h2>
+      <div class="hero-cta-row" style="justify-content:center">
+        <a class="btn btn-lg cta-button" href="booking.html">Book a Chair</a>
+        <a class="btn btn-ghost btn-lg cta-button" data-shop="whatsapp-link" data-wa-msg="Hi Samscales, I'd like to book an appointment." href="#">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Tail: lets the real footer scroll into view after the experience -->
+<div class="home-tail">
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo.jpeg" alt="Samscales logo" />
+      <p>Precision cuts, clean fades and a calm room. Established 2026.</p>
+      <p class="footer-tag">Sharp Cuts. Clean Fades.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <ul>
+        <li><a data-shop="maps-link" href="#" target="_blank" rel="noopener"><span data-shop="address">—</span></a></li>
+        <li><a data-shop="phone-link" href="#">—</a></li>
+        <li><a data-shop="email-link" href="#">—</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hours</h4>
+      <div data-shop="hours" class="footer-hours"></div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <span data-shop="year">2026</span> Samscales Barber Shop. All rights reserved.</span>
+    <div class="footer-social">
+      <a data-shop="instagram-link" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a data-shop="whatsapp-link" data-wa-msg="Hi Samscales!" href="#" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l1.6-4.5A8 8 0 1 1 8 19.4L3 21z"/><path d="M9 8c0 4 3 7 7 7M9 8c0-1 1-1 1.5-.5l1 1.5-1 1M16 15c1 0 1-1 .5-1.5l-1.5-1-1 1"/></svg>
+      </a>
+      <a data-shop="phone-link" href="#" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h3l1.5 4.5L7.5 10a11 11 0 0 0 6 6l1.5-2 4.5 1.5V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+    </div>
+  </div>
+</footer>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="js/site.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
